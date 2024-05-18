@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>フローチャートからif文を記述する</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.css" />
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <div class="heading">
+          <h1 class="title is-2">フローチャートからif文を記述する</h1>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <pre class="mermaid">
+        flowchart TB
+        classDef hidden display:none;
+        s( ):::hidden
+        c( ):::hidden
+        e( ):::hidden
+        s---c1{a > b}---|Y|n1[x ← x + 2]---n2[y ← y - 1]---c---e
+        c1---|N|n3[x ← x - 2]---n4[y ← y + 1]-->c
+      </pre>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+    <script src="./Scripts/03.js"></script>
+  </body>
+</html>
