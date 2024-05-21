@@ -1,0 +1,14 @@
+.spoiler {
+  filter: blur(10px);
+  cursor: pointer;
+  transition: filter 100ms ease 0ms;
+  &:hover {
+    filter: blur(5px);
+  }
+  &.show {
+    filter: blur(0px);
+    &:hover {
+      filter: blur(0px);
+    }
+  }
+}
