@@ -125,6 +125,7 @@ function generateCode(variables, codePattern) {
         r("×", "*");
         r("÷", "/");
         r("←", "=");
+        e = e + ";";
         return e;
       });
     }
@@ -140,16 +141,16 @@ function generateCode(variables, codePattern) {
     codePart = "";
     switch (e) {
       case "[":
-        codePart = "".padStart(indent, " ") + "if (" + values[conditionIndex++] + ")\n" + "".padStart(indent++, "  ") + "{";
+        codePart = "".padStart(indent * 4, " ") + "if (" + values[conditionIndex++] + ")\n" + "".padStart(indent++ * 4, " ") + "{";
         break;
       case "]":
-        codePart = "".padStart(--indent, " ") + "}";
+        codePart = "".padStart(--indent * 4, " ") + "}";
         break;
       case ":":
-        codePart = "".padStart(--indent, " ") + "}\n" + "".padStart(indent, " ") + "else\n" + "".padStart(indent++, " ") + "{";
+        codePart = "".padStart(--indent * 4, " ") + "}\n" + "".padStart(indent * 4, " ") + "else\n" + "".padStart(indent++ * 4, " ") + "{";
         break;
       case "p":
-        codePart = "".padStart(indent, " ") + values[processIndex][0] + "\n" + "".padStart(indent, " ") + values[processIndex++][1];
+        codePart = "".padStart(indent * 4, " ") + values[processIndex][0] + "\n" + "".padStart(indent * 4, " ") + values[processIndex++][1];
         break;
       default:
         break;
